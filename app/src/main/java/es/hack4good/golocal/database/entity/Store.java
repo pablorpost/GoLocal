@@ -1,13 +1,26 @@
-package es.hack4good.golocal.models;
+package es.hack4good.golocal.database.entity;
+
+import androidx.room.ColumnInfo;
+import androidx.room.PrimaryKey;
+
+import es.hack4good.golocal.models.Location;
 
 public class Store {
+    @PrimaryKey(autoGenerate = true)
     private long id;
+    @ColumnInfo(name = "name")
     private String name;
+    @ColumnInfo(name = "location")
     private Location location;
+    @ColumnInfo(name = "image")
     private String image;
+    @ColumnInfo(name = "description")
     private String description;
+    @ColumnInfo(name = "phone")
     private String phone;
+    @ColumnInfo(name = "email")
     private String email;
+    @ColumnInfo(name = "web")
     private String web;
     public Store(long id,String name, Location location, String image, String description, String phone, String email, String web) {
         this.id = id;
