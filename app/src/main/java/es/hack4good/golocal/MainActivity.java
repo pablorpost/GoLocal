@@ -1,10 +1,10 @@
 package es.hack4good.golocal;
 
 import android.os.Bundle;
-import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import es.hack4good.golocal.database.DB;
+import es.hack4good.golocal.database.AppDatabase;
 import es.hack4good.golocal.database.dao.OrderDAO;
 import es.hack4good.golocal.database.dao.ProductDAO;
 import es.hack4good.golocal.database.dao.StoreDAO;
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        DB db = DB.getInstance(this.getApplicationContext());
+        AppDatabase db = AppDatabase.getInstance(this.getApplicationContext());
         OrderDAO orderDAO = db.orderDAO();
         ProductDAO productDAO = db.productDAO();
         StoreDAO storeDAO = db.storeDAO();
