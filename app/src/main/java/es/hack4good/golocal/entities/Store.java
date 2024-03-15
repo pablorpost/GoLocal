@@ -3,6 +3,7 @@ package es.hack4good.golocal.entities;
 import java.util.HashMap;
 
 public class Store {
+    private long id;
     private String name;
     private Location location;
     public HashMap<Long, Product> products;

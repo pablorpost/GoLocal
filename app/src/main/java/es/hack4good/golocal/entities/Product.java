@@ -6,17 +6,17 @@ public class Product {
     private String description;
     private double price;
     private ProductType type;
-    private Store store;
+    private long storeId;
     private String image;
     private int stock;
 
-    public Product(long id, String name, String description, double price, ProductType type, Store store, String image, int stock) {
+    public Product(long id, String name, String description, double price, ProductType type, long storeId, String image, int stock) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
         this.type = type;
-        this.store = store;
+        this.storeId = storeId;
         this.image = image;
         this.stock = stock;
     }
@@ -61,12 +61,12 @@ public class Product {
         this.type = type;
     }
 
-    public Store getStore() {
-        return store;
+    public long getStoreId() {
+        return storeId;
     }
 
-    public void setStore(Store store) {
-        this.store = store;
+    public void setStore(long storeId) {
+        this.storeId = storeId;
     }
 
     public String getImage() {
