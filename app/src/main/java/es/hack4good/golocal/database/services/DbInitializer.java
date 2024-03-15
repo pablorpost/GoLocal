@@ -20,7 +20,7 @@ public class DbInitializer {
             List<String> descriptions = Arrays.asList("Bar Pepe description", "Ca' Manolo description", "Cerveceria El Gustazo description", "El Rincon de Rick description", "Elite II description", "La Tahona description", "Granja Antonio description", "Las Costuras de Amelia description");
             List<String> phones = Arrays.asList("Bar Pepe phone", "Ca' Manolo phone", "Cerveceria El Gustazo phone", "El Rincon de Rick phone", "Elite II phone", "La Tahona phone", "Granja Antonio phone", "Las Costuras de Amelia phone");
             List<String> emails = Arrays.asList("Bar Pepe email", "Ca' Manolo email", "Cerveceria El Gustazo email", "El Rincon de Rick email", "Elite II email", "La Tahona email", "Granja Antonio email", "Las Costuras de Amelia email");
-            List<String> webs = Arrays.asList("Carrefour web", "Mercadona web", "Lidl web", "Aldi web", "Dia web", "El Corte Inglés web", "Alcampo web", "Eroski web", "Consum web", "Caprabo web");
+            List<String> webs = Arrays.asList("barPepe.es", "caManolo.es", "cerveceriaElGustazo.es", "elRinconDeRick.es", "eliteII.es", "laTahona.es", "granjaAntonio.es", "lasCosturasDeAmelia.es");
             for (int i = 0; i < names.size(); i++) {
                 db.storeDAO().insertStore(new Store(i, names.get(i), locations.get(i), images.get(i), descriptions.get(i), phones.get(i), emails.get(i), webs.get(i)));
             }
