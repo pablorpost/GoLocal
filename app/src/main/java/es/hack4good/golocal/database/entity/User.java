@@ -15,7 +15,7 @@ public class User {
     @ColumnInfo(name = "email")
     private String email;
     @ColumnInfo(name = "password")
-    private String password;
+    private int hashedPassword;
     @ColumnInfo(name = "phone")
     private String phone;
     @ColumnInfo(name = "address")
@@ -26,7 +26,7 @@ public class User {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.password = password;
+        this.hashedPassword = password.hashCode();
         this.phone = phone;
         this.address = address;
         this.image = image;
@@ -56,12 +56,12 @@ public class User {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public int getHashedPassword(){
+        return hashedPassword;
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.hashedPassword = password.hashCode();
     }
 
     public String getPhone() {
