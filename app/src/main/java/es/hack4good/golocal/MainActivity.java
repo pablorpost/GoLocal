@@ -11,8 +11,11 @@ import es.hack4good.golocal.database.dao.StoreDAO;
 import es.hack4good.golocal.database.dao.UserDAO;
 import es.hack4good.golocal.repositories.OrderRepository;
 import es.hack4good.golocal.repositories.OrderRepositoryImpl;
+import es.hack4good.golocal.repositories.ProductRepository;
 import es.hack4good.golocal.repositories.ProductRepositoryImpl;
+import es.hack4good.golocal.repositories.StoreRepository;
 import es.hack4good.golocal.repositories.StoreRepositoryImpl;
+import es.hack4good.golocal.repositories.UserRepository;
 import es.hack4good.golocal.repositories.UserRepositoryImpl;
 
 public class MainActivity extends AppCompatActivity {
