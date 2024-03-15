@@ -1,14 +1,31 @@
-package es.hack4good.golocal.models;
+package es.hack4good.golocal.database.entity;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+
+import es.hack4good.golocal.models.Location;
+import es.hack4good.golocal.models.OrderStatus;
+import es.hack4good.golocal.models.Time;
+
+@Entity(tableName = "order")
 public class Order {
+    @PrimaryKey(autoGenerate = true)
     private long id;
+    @ColumnInfo(name = "user_id")
     private int userId;
+    @ColumnInfo(name = "product_id")
     private int productId;
+    @ColumnInfo(name = "price")
     private double price;
+    @ColumnInfo(name = "quantity")
     private int quantity;
+    @ColumnInfo(name = "date")
     private Time date;
+    @ColumnInfo(name = "location")
     private Location location;
+    @ColumnInfo(name = "paid")
     private boolean paid;
+    @ColumnInfo(name = "status")
     private OrderStatus status;
 
     public Order(int id, int userId, int productId, double price, int quantity, Time date, Location location, boolean paid, OrderStatus status) {

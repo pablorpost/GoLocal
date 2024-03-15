@@ -3,7 +3,7 @@ package es.hack4good.golocal.repositories;
 import java.util.HashMap;
 import java.util.List;
 
-import es.hack4good.golocal.models.Order;
+import es.hack4good.golocal.database.entity.Order;
 
 public class OrderRepository {
     private HashMap<Long, Order> orders;
