@@ -1,6 +1,13 @@
-package es.hack4good.golocal.entities;
+package es.hack4good.golocal.database.entity;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+import es.hack4good.golocal.entities.ProductType;
+
+@Entity(tableName = "product")
 public class Product {
+    @PrimaryKey(autoGenerate = true)
     private long id;
     private String name;
     private String description;
