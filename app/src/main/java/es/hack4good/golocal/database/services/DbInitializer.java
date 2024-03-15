@@ -14,12 +14,12 @@ public class DbInitializer {
     public void initialize(AppDatabase db) {
         if(db.productDAO().getAllProducts().isEmpty()) {
             // Insert stores
-            List<String> names = Arrays.asList("Carrefour", "Mercadona", "Lidl", "Aldi", "Dia", "El Corte Inglés", "Alcampo", "Eroski", "Consum", "Caprabo");
+            List<String> names = Arrays.asList("Bar Pepe", "Ca' Manolo", "Cerveceria El Gustazo", "El Rincon de Rick", "Elite II", "La Tahona", "Granja Antonio", "Las Costuras de Amelia");
             List<Location> locations = Arrays.asList(null, null, null, null, null, null, null, null, null, null);
             List<String> images = Arrays.asList(null, null, null, null, null, null, null, null, null, null);
-            List<String> descriptions = Arrays.asList("Carrefour description", "Mercadona description", "Lidl description", "Aldi description", "Dia description", "El Corte Inglés description", "Alcampo description", "Eroski description", "Consum description", "Caprabo description");
-            List<String> phones = Arrays.asList("Carrefour phone", "Mercadona phone", "Lidl phone", "Aldi phone", "Dia phone", "El Corte Inglés phone", "Alcampo phone", "Eroski phone", "Consum phone", "Caprabo phone");
-            List<String> emails = Arrays.asList("Carrefour email", "Mercadona email", "Lidl email", "Aldi email", "Dia email", "El Corte Inglés email", "Alcampo email", "Eroski email", "Consum email", "Caprabo email");
+            List<String> descriptions = Arrays.asList("Bar Pepe description", "Ca' Manolo description", "Cerveceria El Gustazo description", "El Rincon de Rick description", "Elite II description", "La Tahona description", "Granja Antonio description", "Las Costuras de Amelia description");
+            List<String> phones = Arrays.asList("Bar Pepe phone", "Ca' Manolo phone", "Cerveceria El Gustazo phone", "El Rincon de Rick phone", "Elite II phone", "La Tahona phone", "Granja Antonio phone", "Las Costuras de Amelia phone");
+            List<String> emails = Arrays.asList("Bar Pepe email", "Ca' Manolo email", "Cerveceria El Gustazo email", "El Rincon de Rick email", "Elite II email", "La Tahona email", "Granja Antonio email", "Las Costuras de Amelia email");
             List<String> webs = Arrays.asList("Carrefour web", "Mercadona web", "Lidl web", "Aldi web", "Dia web", "El Corte Inglés web", "Alcampo web", "Eroski web", "Consum web", "Caprabo web");
             for (int i = 0; i < names.size(); i++) {
                 db.storeDAO().insertStore(new Store(i, names.get(i), locations.get(i), images.get(i), descriptions.get(i), phones.get(i), emails.get(i), webs.get(i)));
