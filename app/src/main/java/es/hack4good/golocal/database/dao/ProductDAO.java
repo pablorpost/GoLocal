@@ -1,5 +1,6 @@
 package es.hack4good.golocal.database.dao;
 
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -10,6 +11,7 @@ import java.util.List;
 import es.hack4good.golocal.database.entity.Product;
 import es.hack4good.golocal.models.ProductType;
 
+@Dao
 public interface ProductDAO {
     @Query("SELECT * FROM product")
     public List<Product> getAllProducts();

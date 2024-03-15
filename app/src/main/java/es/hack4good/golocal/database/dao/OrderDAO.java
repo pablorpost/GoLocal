@@ -1,5 +1,6 @@
 package es.hack4good.golocal.database.dao;
 
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -9,10 +10,11 @@ import java.util.List;
 
 import es.hack4good.golocal.database.entity.Order;
 
+@Dao
 public interface OrderDAO {
-    @Query("SELECT * FROM order")
+    @Query("SELECT * FROM orders")
     public List<Order> getAllOrders();
-    @Query("SELECT * FROM order WHERE id = :id")
+    @Query("SELECT * FROM orders WHERE id = :id")
     public Order getOrderById(long id);
 
     @Insert

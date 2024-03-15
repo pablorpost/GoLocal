@@ -13,7 +13,7 @@ public class Store {
     @ColumnInfo(name = "name")
     private String name;
     @ColumnInfo(name = "location")
-    private Location location;
+    private String location;
     @ColumnInfo(name = "image")
     private String image;
     @ColumnInfo(name = "description")
@@ -24,7 +24,7 @@ public class Store {
     private String email;
     @ColumnInfo(name = "web")
     private String web;
-    public Store(long id,String name, Location location, String image, String description, String phone, String email, String web) {
+    public Store(long id, String name, String location, String image, String description, String phone, String email, String web) {
         this.id = id;
         this.name = name;
         this.location = location;
@@ -34,6 +34,8 @@ public class Store {
         this.email = email;
         this.web = web;
     }
+
+    public Store(){}
 
     public long getId() {
         return id;
@@ -51,11 +53,11 @@ public class Store {
         this.name = name;
     }
 
-    public Location getLocation() {
+    public String getLocation() {
         return location;
     }
 
-    public void setLocation(Location location) {
+    public void setLocation(String location) {
         this.location = location;
     }
 

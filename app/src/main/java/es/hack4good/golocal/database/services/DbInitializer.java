@@ -24,7 +24,7 @@ public class DbInitializer {
             List<String> emails = Arrays.asList("Bar Pepe email", "Ca' Manolo email", "Cerveceria El Gustazo email", "El Rincon de Rick email", "Elite II email", "La Tahona email", "Granja Antonio email", "Las Costuras de Amelia email");
             List<String> webs = Arrays.asList("barPepe.es", "caManolo.es", "cerveceriaElGustazo.es", "elRinconDeRick.es", "eliteII.es", "laTahona.es", "granjaAntonio.es", "lasCosturasDeAmelia.es");
             for (int i = 0; i < names.size(); i++) {
-                db.storeDAO().insertStore(new Store(i, names.get(i), locations.get(i), images.get(i), descriptions.get(i), phones.get(i), emails.get(i), webs.get(i)));
+                db.storeDAO().insertStore(new Store(i, names.get(i), locations.get(i).toString(), images.get(i), descriptions.get(i), phones.get(i), emails.get(i), webs.get(i)));
             }
             // Insert products
             List<String> productNamesBarPepe = Arrays.asList("Cerveza", "Vino", "Coca Cola", "Fanta", "Papas", "Aceitunas", "Tortilla", "Bocadillo");
@@ -87,7 +87,7 @@ public class DbInitializer {
             List<Location> userLocations = Arrays.asList(null, null, null, null, null, null, null, null, null, null);
             List<String> userImages = Arrays.asList(null, null, null, null, null, null, null, null, null, null);
             for (int i = 0; i < userNames.size(); i++) {
-                db.userDAO().insertUser(new User(i, userNames.get(i), userEmails.get(i), passwords.get(i), userPhones.get(i), userLocations.get(i), userImages.get(i)));
+                db.userDAO().insertUser(new User(i, userNames.get(i), userEmails.get(i), passwords.get(i).hashCode(), userPhones.get(i), userLocations.get(i).toString(), userImages.get(i)));
             }
             // Insert orders
 

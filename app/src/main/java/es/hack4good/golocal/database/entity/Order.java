@@ -4,11 +4,9 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import es.hack4good.golocal.models.Location;
 import es.hack4good.golocal.models.OrderStatus;
-import es.hack4good.golocal.models.Time;
 
-@Entity(tableName = "order")
+@Entity(tableName = "orders")
 public class Order {
     @PrimaryKey(autoGenerate = true)
     private long id;
@@ -21,15 +19,15 @@ public class Order {
     @ColumnInfo(name = "quantity")
     private int quantity;
     @ColumnInfo(name = "date")
-    private Time date;
+    private String date;
     @ColumnInfo(name = "location")
-    private Location location;
+    private String location;
     @ColumnInfo(name = "paid")
     private boolean paid;
     @ColumnInfo(name = "status")
     private OrderStatus status;
 
-    public Order(int id, int userId, int productId, double price, int quantity, Time date, Location location, boolean paid, OrderStatus status) {
+    public Order(int id, int userId, int productId, double price, int quantity, String date, String location, boolean paid, OrderStatus status) {
         this.id = id;
         this.userId = userId;
         this.productId = productId;
@@ -40,6 +38,8 @@ public class Order {
         this.paid = false;
         this.status = OrderStatus.PENDING;
     }
+
+    public Order(){}
 
     public long getId() {
         return id;
@@ -81,19 +81,19 @@ public class Order {
         this.quantity = quantity;
     }
 
-    public Time getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Time date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public Location getLocation() {
+    public String getLocation() {
         return location;
     }
 
-    public void setLocation(Location location) {
+    public void setLocation(String location) {
         this.location = location;
     }
 

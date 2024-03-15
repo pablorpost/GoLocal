@@ -4,8 +4,6 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import es.hack4good.golocal.models.Location;
-
 @Entity(tableName = "user")
 public class User {
     @PrimaryKey(autoGenerate = true)
@@ -19,18 +17,20 @@ public class User {
     @ColumnInfo(name = "phone")
     private String phone;
     @ColumnInfo(name = "address")
-    private Location address;
+    private String address;
     @ColumnInfo(name = "image")
     private String image;
-    public User(int id, String name, String email, String password, String phone, Location address, String image) {
+    public User(int id, String name, String email, int hashedPassword, String phone, String address, String image) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.hashedPassword = password.hashCode();
+        this.hashedPassword = hashedPassword;
         this.phone = phone;
         this.address = address;
         this.image = image;
     }
+
+    public User(){}
 
     public int getId() {
         return id;
@@ -60,8 +60,8 @@ public class User {
         return hashedPassword;
     }
 
-    public void setPassword(String password) {
-        this.hashedPassword = password.hashCode();
+    public void setPassword(int hashedPassword) {
+        this.hashedPassword = hashedPassword;
     }
 
     public String getPhone() {
@@ -72,11 +72,11 @@ public class User {
         this.phone = phone;
     }
 
-    public Location getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(Location address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
@@ -86,5 +86,9 @@ public class User {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public void setHashedPassword(int hashedPassword) {
+        this.hashedPassword = hashedPassword;
     }
 }

@@ -36,6 +36,8 @@ public class Product {
         this.stock = stock;
     }
 
+    public Product(){}
+
     public long getId() {
         return id;
     }
@@ -116,5 +118,8 @@ public class Product {
         return this.type.equals(type);
     }
 
+    public void setStoreId(long storeId) {
+        this.storeId = storeId;
+    }
 }
 
