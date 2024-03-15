@@ -1,10 +1,12 @@
-package es.hack4good.golocal.models;
+package es.hack4good.golocal.database.entity;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
+import es.hack4good.golocal.models.Location;
+
+@Entity(tableName = "user")
 public class User {
     @PrimaryKey(autoGenerate = true)
     private int id;
