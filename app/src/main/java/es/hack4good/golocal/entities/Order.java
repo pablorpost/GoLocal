@@ -1,7 +1,7 @@
 package es.hack4good.golocal.entities;
 
 public class Order {
-    private int id;
+    private long id;
     private int userId;
     private int productId;
     private double price;
@@ -23,11 +23,11 @@ public class Order {
         this.status = OrderStatus.PENDING;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
