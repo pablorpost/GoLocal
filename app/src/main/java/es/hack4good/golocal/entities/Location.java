@@ -1,4 +1,4 @@
 package es.hack4good.golocal.entities;
 
-public class Ubication {
+public class Location {
 }
