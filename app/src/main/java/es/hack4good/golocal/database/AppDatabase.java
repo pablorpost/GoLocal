@@ -21,16 +21,16 @@ import es.hack4good.golocal.database.entity.User;
         Store.class,
         User.class
 }, version = 1, exportSchema = false)
-public abstract class DB extends RoomDatabase{
-    public static DB INSTANCE;
+public abstract class AppDatabase extends RoomDatabase{
+    public static AppDatabase INSTANCE;
 
     public abstract OrderDAO orderDAO();
     public abstract ProductDAO productDAO();
     public abstract StoreDAO storeDAO();
     public abstract UserDAO userDAO();
-    public static DB getInstance(Context context) {
+    public static AppDatabase getInstance(Context context) {
         if (INSTANCE == null) {
-            INSTANCE = Room.databaseBuilder(context, DB.class, "golocal")
+            INSTANCE = Room.databaseBuilder(context, AppDatabase.class, "golocal")
                     .allowMainThreadQueries()
                     .fallbackToDestructiveMigration()
                     .build();
