@@ -6,13 +6,13 @@ public class Store {
     private long id;
     private String name;
     private Location location;
-    public HashMap<Long, Product> products;
     private String image;
     private String description;
     private String phone;
     private String email;
     private String web;
-    public Store(String name, Location location, String image, String description, String phone, String email, String web) {
+    public Store(long id,String name, Location location, String image, String description, String phone, String email, String web) {
+        this.id = id;
         this.name = name;
         this.location = location;
         this.image = image;
@@ -20,7 +20,14 @@ public class Store {
         this.phone = phone;
         this.email = email;
         this.web = web;
-        this.products = new HashMap<>();
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -37,14 +44,6 @@ public class Store {
 
     public void setLocation(Location location) {
         this.location = location;
-    }
-
-    public HashMap<Long, Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(HashMap<Long, Product> products) {
-        this.products = products;
     }
 
     public String getImage() {
@@ -87,27 +86,5 @@ public class Store {
         this.web = web;
     }
 
-    private boolean addProduct(Product product) {
-        if(products.containsKey(product.getId())) {
-            return false;
-        }
-        products.put(product.getId(), product);
-        return true;
-    }
 
-    private boolean removeProduct(Product product) {
-        if(products.containsKey(product.getId())) {
-            products.remove(product.getId());
-            return true;
-        }
-        return false;
-    }
-
-    private boolean updateProduct(Product product) {
-        if(products.containsKey(product.getId())) {
-            products.put(product.getId(), product);
-            return true;
-        }
-        return false;
-    }
 }
