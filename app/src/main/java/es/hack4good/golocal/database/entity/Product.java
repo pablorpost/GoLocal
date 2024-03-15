@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import es.hack4good.golocal.entities.ProductType;
+import es.hack4good.golocal.models.ProductType;
 
 @Entity(tableName = "product")
 public class Product {

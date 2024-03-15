@@ -2,7 +2,7 @@ package es.hack4good.golocal.database.dao;
 
 import androidx.room.Query;
 
-import es.hack4good.golocal.entities.ProductType;
+import es.hack4good.golocal.models.ProductType;
 
 public class ProductDAO {
     @Query("SELECT * FROM product")

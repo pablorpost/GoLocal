@@ -1,4 +1,4 @@
-package es.hack4good.golocal.entities;
+package es.hack4good.golocal.models;
 
 public class Order {
     private long id;

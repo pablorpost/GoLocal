@@ -1,6 +1,4 @@
-package es.hack4good.golocal.entities;
-
-import java.util.HashMap;
+package es.hack4good.golocal.models;
 
 public class Store {
     private long id;

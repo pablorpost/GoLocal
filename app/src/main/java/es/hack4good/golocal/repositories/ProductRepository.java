@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import es.hack4good.golocal.database.entity.Product;
-import es.hack4good.golocal.entities.ProductType;
+import es.hack4good.golocal.models.ProductType;
 
 public class ProductRepository {
     private HashMap<Long, Product> products;
