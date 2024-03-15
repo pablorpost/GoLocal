@@ -2,6 +2,7 @@ package es.hack4good.golocal.database.entity;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 import es.hack4good.golocal.models.Location;
 import es.hack4good.golocal.models.OrderStatus;
