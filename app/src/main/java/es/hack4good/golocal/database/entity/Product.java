@@ -1,5 +1,6 @@
 package es.hack4good.golocal.database.entity;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -9,12 +10,19 @@ import es.hack4good.golocal.entities.ProductType;
 public class Product {
     @PrimaryKey(autoGenerate = true)
     private long id;
+    @ColumnInfo(name = "name")
     private String name;
+    @ColumnInfo(name = "description")
     private String description;
+    @ColumnInfo(name = "price")
     private double price;
+    @ColumnInfo(name = "type")
     private ProductType type;
+    @ColumnInfo(name = "store_id")
     private long storeId;
+    @ColumnInfo(name = "image")
     private String image;
+    @ColumnInfo(name = "stock")
     private int stock;
 
     public Product(long id, String name, String description, double price, ProductType type, long storeId, String image, int stock) {
