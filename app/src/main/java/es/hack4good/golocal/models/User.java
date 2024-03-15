@@ -1,12 +1,24 @@
 package es.hack4good.golocal.models;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class User {
+    @PrimaryKey(autoGenerate = true)
     private int id;
+    @ColumnInfo(name = "name")
     private String name;
+    @ColumnInfo(name = "email")
     private String email;
+    @ColumnInfo(name = "password")
     private String password;
+    @ColumnInfo(name = "phone")
     private String phone;
+    @ColumnInfo(name = "address")
     private Location address;
+    @ColumnInfo(name = "image")
     private String image;
     public User(int id, String name, String email, String password, String phone, Location address, String image) {
         this.id = id;
