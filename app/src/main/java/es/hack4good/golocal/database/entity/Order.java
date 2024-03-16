@@ -11,9 +11,9 @@ public class Order {
     @PrimaryKey(autoGenerate = true)
     private long id;
     @ColumnInfo(name = "user_id")
-    private int userId;
+    private long userId;
     @ColumnInfo(name = "product_id")
-    private int productId;
+    private long productId;
     @ColumnInfo(name = "price")
     private double price;
     @ColumnInfo(name = "quantity")
@@ -27,8 +27,7 @@ public class Order {
     @ColumnInfo(name = "status")
     private OrderStatus status;
 
-    public Order(int id, int userId, int productId, double price, int quantity, String date, String location, boolean paid, OrderStatus status) {
-        this.id = id;
+    public Order(long userId, long productId, double price, int quantity, String date, String location, boolean paid, OrderStatus status) {
         this.userId = userId;
         this.productId = productId;
         this.price = price;
@@ -49,19 +48,19 @@ public class Order {
         this.id = id;
     }
 
-    public int getUserId() {
+    public long getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(long userId) {
         this.userId = userId;
     }
 
-    public int getProductId() {
+    public long getProductId() {
         return productId;
     }
 
-    public void setProductId(int productId) {
+    public void setProductId(long productId) {
         this.productId = productId;
     }
 
