@@ -1,6 +1,7 @@
 package es.hack4good.golocal.models;
 
 
+import android.content.Context;
 import android.util.Pair;
 
 import java.util.ArrayList;
@@ -16,9 +17,12 @@ public class Basket {
     private static List<Pair<Product, Integer>> products;
     private static User user;
 
-    public Basket(User user) {
+    public Basket(User user, Context context) {
         if (products == null) {
             products = new ArrayList<>();
+            AppDatabase db = AppDatabase.buildDatabaseInstance(context,"golocal",false);
+            Product p = db.productDAO().getProductById(1);
+            products.add(new Pair<>(p, 2));
         }
         this.user = user;
     }

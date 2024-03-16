@@ -41,7 +41,7 @@ public class DashboardFragment extends Fragment {
             DbInitializer.initialize(db);
         }
 
-        List<Pair<Product,Integer>> basket = new Basket(null).getProducts();
+        List<Pair<Product,Integer>> basket = new Basket(null, getContext()).getProducts();
         BasketAdapter adapter = new BasketAdapter(getActivity(),basket);
         listView.setAdapter(adapter);
 
