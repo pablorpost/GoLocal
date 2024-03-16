@@ -4,10 +4,12 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 import es.hack4good.golocal.models.ProductType;
 
 @Entity(tableName = "product")
-public class Product {
+public class Product implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private long id;
     @ColumnInfo(name = "name")

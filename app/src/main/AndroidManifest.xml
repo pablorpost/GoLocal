@@ -13,27 +13,24 @@
         android:theme="@style/Theme.GoLocal"
         tools:targetApi="31">
         <activity
+            android:name=".ShowProduct"
+            android:exported="false" />
+        <activity
             android:name=".MainPage"
             android:exported="true"
             android:label="@string/title_activity_main_page">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".landing"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".MainActivity2"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

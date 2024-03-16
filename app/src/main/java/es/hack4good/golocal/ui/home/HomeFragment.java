@@ -1,9 +1,11 @@
 package es.hack4good.golocal.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -18,6 +20,7 @@ import java.util.List;
 
 import es.hack4good.golocal.ProductAdapter;
 import es.hack4good.golocal.R;
+import es.hack4good.golocal.ShowProduct;
 import es.hack4good.golocal.database.AppDatabase;
 import es.hack4good.golocal.database.entity.Product;
 import es.hack4good.golocal.database.services.DbInitializer;
@@ -34,7 +37,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         ListView listView = view.findViewById(R.id.listView2);
-            AppDatabase db = AppDatabase.buildDatabaseInstance(getActivity(),"golocal",false);
+        AppDatabase db = AppDatabase.buildDatabaseInstance(getActivity(),"golocal",false);
         if(db.productDAO().getAllProducts().isEmpty()){
             DbInitializer.initialize(db);
         }
@@ -43,6 +46,16 @@ public class HomeFragment extends Fragment {
         System.out.println(products);
         ProductAdapter adapter = new ProductAdapter(getActivity(),products);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Product p = products.get(position);
+                Intent intent = new Intent(getContext(), ShowProduct.class);
+                intent.putExtra("product", p);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }

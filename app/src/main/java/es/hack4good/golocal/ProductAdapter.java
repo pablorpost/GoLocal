@@ -12,6 +12,7 @@ import java.util.List;
 
 import es.hack4good.golocal.database.AppDatabase;
 import es.hack4good.golocal.database.entity.Product;
+import es.hack4good.golocal.database.entity.Store;
 
 public class ProductAdapter extends BaseAdapter {
     Context context;
@@ -41,13 +42,22 @@ public class ProductAdapter extends BaseAdapter {
         TextView textView;
 
         Product p = products.get(position);
+        //AppDatabase db = AppDatabase.buildDatabaseInstance(context,"golocal",false);
+        //String storeName = db.storeDAO().getStoreById(products.get(position).getStoreId()).getName();
+
 
         if(convertView == null){
             convertView = LayoutInflater.from(context).inflate(R.layout.shopitem,null);
         }
 
-        textView = convertView.findViewById(R.id.nombreProducto);
+        textView = convertView.findViewById(R.id.nameView);
+        TextView storeView = convertView.findViewById(R.id.storeView);
+        TextView priceView = convertView.findViewById(R.id.priceView);
+
+
         textView.setText(p.getName());
+        //storeView.setText(storeName);
+        priceView.setText(String.valueOf(p.getPrice())+"€");
         return convertView;
     }
 }
