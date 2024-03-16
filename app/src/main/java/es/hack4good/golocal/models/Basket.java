@@ -16,7 +16,7 @@ public class Basket {
     private static List<Pair<Product, Integer>> products;
     private static User user;
 
-    private Basket(User user) {
+    public Basket(User user) {
         if (products == null) {
             products = new ArrayList<>();
         }
@@ -48,6 +48,10 @@ public class Basket {
             }
         }
         return false;
+    }
+
+    public static List<Pair<Product, Integer>> getProducts() {
+        return products;
     }
 
     public boolean makeOrder(){
