@@ -67,4 +67,12 @@ public class Basket {
         }
         return false;
     }
+
+    public double totalCost(){
+        double total = 0;
+        for (Pair<Product, Integer> p : products) {
+            total += p.first.getPrice()*p.second;
+        }
+        return total;
+    }
 }
