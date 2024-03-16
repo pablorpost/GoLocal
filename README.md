@@ -7,6 +7,7 @@ También permite a pequeñas comunidades juntarse para hcer complas y asi aument
 1. Este es un prototipo para ver que funciona el BackEnd.   
 2. El prototipo para el FrontEnd se encuentra en: [Figma](https://www.figma.com/proto/2k75aDIUPYnceh0fc5hRZF/goLocal?page-id=0%3A1&type=design&node-id=46-904&viewport=2178%2C2178%2C0.22&t=YJ0IY1Ef4ljUVd07-1&scaling=scale-down&starting-point-node-id=4%3A5&mode=design)  
 3. La presentación es el pdf llamado [PresentaciónGoLocal.pdf](PresentaciónGoLocal.pdf)
+    - También se puede ver en [Genial.ly](https://view.genial.ly/65f46aa32912450014bec54c/presentation-golocal)
 4. El video de presentación es el archivo [goLocal.mp4](goLocal.mp4)
     - También se puede ver en [Youtube](https://www.youtube.com/watch?v=QsQz4qCNdUc)
 
