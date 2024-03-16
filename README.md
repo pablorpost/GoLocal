@@ -8,6 +8,7 @@ También permite a pequeñas comunidades juntarse para hcer complas y asi aument
 2. El FrontEnd se encuentra en: [Figma](https://www.figma.com/proto/2k75aDIUPYnceh0fc5hRZF/goLocal?page-id=0%3A1&type=design&node-id=46-904&viewport=2178%2C2178%2C0.22&t=YJ0IY1Ef4ljUVd07-1&scaling=scale-down&starting-point-node-id=4%3A5&mode=design)  
 3. La presentación es el pdf llamado [PresentaciónGoLocal.pdf](PresentaciónGoLocal.pdf)
 4. El video de presentación es el archivo [goLocal.mp4](goLocal.mp4)
+    - También se puede ver en [Youtube](https://www.youtube.com/watch?v=QsQz4qCNdUc)
 
 
 > ### Este proyecto se desarrolló en hack4good 2024 por:
