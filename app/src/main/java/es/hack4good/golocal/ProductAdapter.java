@@ -44,7 +44,7 @@ public class ProductAdapter extends BaseAdapter {
         Product p = products.get(position);
         AppDatabase db = AppDatabase.buildDatabaseInstance(context,"golocal",false);
         Store store = db.storeDAO().getStoreById(products.get(position).getStoreId());
-        String storeName = "MangelTonto";
+        String storeName = "Store";
         if(store != null){
             storeName = store.getName();
         }
