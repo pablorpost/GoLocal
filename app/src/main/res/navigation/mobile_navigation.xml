@@ -14,12 +14,12 @@
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="es.hack4good.golocal.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
+        android:label="Carrito"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="es.hack4good.golocal.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:label="Comunidades"
         tools:layout="@layout/fragment_notifications" />
 </navigation>
