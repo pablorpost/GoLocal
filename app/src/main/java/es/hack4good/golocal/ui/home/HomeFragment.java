@@ -34,7 +34,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         ListView listView = view.findViewById(R.id.listView2);
-            AppDatabase db = AppDatabase.buildDatabaseInstance(getActivity(),"golocal",false);
+        AppDatabase db = AppDatabase.buildDatabaseInstance(getActivity(),"golocal",false);
         if(db.productDAO().getAllProducts().isEmpty()){
             DbInitializer.initialize(db);
         }
