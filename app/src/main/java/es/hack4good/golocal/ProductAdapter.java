@@ -42,8 +42,12 @@ public class ProductAdapter extends BaseAdapter {
         TextView textView;
 
         Product p = products.get(position);
-        //AppDatabase db = AppDatabase.buildDatabaseInstance(context,"golocal",false);
-        //String storeName = db.storeDAO().getStoreById(products.get(position).getStoreId()).getName();
+        AppDatabase db = AppDatabase.buildDatabaseInstance(context,"golocal",false);
+        Store store = db.storeDAO().getStoreById(products.get(position).getStoreId());
+        String storeName = "MangelTonto";
+        if(store != null){
+            storeName = store.getName();
+        }
 
 
         if(convertView == null){
@@ -56,7 +60,7 @@ public class ProductAdapter extends BaseAdapter {
 
 
         textView.setText(p.getName());
-        //storeView.setText(storeName);
+        storeView.setText(storeName);
         priceView.setText(String.valueOf(p.getPrice())+"€");
         return convertView;
     }

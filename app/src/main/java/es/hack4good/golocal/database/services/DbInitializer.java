@@ -26,7 +26,7 @@ public class DbInitializer {
             List<String> emails = Arrays.asList("Bar Pepe email", "Ca' Manolo email", "Cerveceria El Gustazo email", "El Rincon de Rick email", "Elite II email", "La Tahona email", "Granja Antonio email", "Las Costuras de Amelia email");
             List<String> webs = Arrays.asList("barPepe.es", "caManolo.es", "cerveceriaElGustazo.es", "elRinconDeRick.es", "eliteII.es", "laTahona.es", "granjaAntonio.es", "lasCosturasDeAmelia.es");
             for (int i = 0; i < names.size(); i++) {
-                sdao.insert(new Store( names.get(i), locations.get(i), images.get(i), descriptions.get(i), phones.get(i), emails.get(i), webs.get(i)));
+                sdao.insert(new Store(names.get(i), locations.get(i), images.get(i), descriptions.get(i), phones.get(i), emails.get(i), webs.get(i)));
             }
             // Insert products
             List<String> productNamesBarPepe = Arrays.asList("Cerveza", "Vino", "Coca Cola", "Fanta", "Papas", "Aceitunas", "Tortilla", "Bocadillo");
@@ -58,28 +58,28 @@ public class DbInitializer {
             List<Integer> stocksGranjaAntonio = Arrays.asList(20,40,30,40,50,60,70,80);
             List<Integer> stocksLasCosturasDeAmelia = Arrays.asList(12,21,6,7,8,9,10,11);
             for (int i = 0; i < productNamesBarPepe.size(); i++) {
-                db.productDAO().insertProduct(new Product(productNamesBarPepe.get(i), productDescriptionsBares.get(i), pricesBarPepe.get(i), typesBares.get(i), 0, imagesBares.get(i), stocksBares.get(i)));
+                db.productDAO().insertProduct(new Product(productNamesBarPepe.get(i), productDescriptionsBares.get(i), pricesBarPepe.get(i), typesBares.get(i), 1, imagesBares.get(i), stocksBares.get(i)));
             }
             for (int i = 0; i < productNamesCaManolo.size(); i++) {
-                db.productDAO().insertProduct(new Product( productNamesCaManolo.get(i), productDescriptionsBares.get(i), pricesCaManolo.get(i), typesBares.get(i), 1, imagesBares.get(i), stocksBares.get(i)));
+                db.productDAO().insertProduct(new Product( productNamesCaManolo.get(i), productDescriptionsBares.get(i), pricesCaManolo.get(i), typesBares.get(i), 2, imagesBares.get(i), stocksBares.get(i)));
             }
             for (int i = 0; i < productNamesCerveceriaElGustazo.size(); i++) {
-                db.productDAO().insertProduct(new Product( productNamesCerveceriaElGustazo.get(i), productDescriptionsBares.get(i), pricesCerveceriaElGustazo.get(i), typesBares.get(i), 2, imagesBares.get(i), stocksBares.get(i)));
+                db.productDAO().insertProduct(new Product( productNamesCerveceriaElGustazo.get(i), productDescriptionsBares.get(i), pricesCerveceriaElGustazo.get(i), typesBares.get(i), 3, imagesBares.get(i), stocksBares.get(i)));
             }
             for (int i = 0; i < productNamesElRinconDeRick.size(); i++) {
-                db.productDAO().insertProduct(new Product( productNamesElRinconDeRick.get(i), productDescriptionsBares.get(i), pricesElRinconDeRick.get(i), typesBares.get(i), 3, imagesBares.get(i), stocksBares.get(i)));
+                db.productDAO().insertProduct(new Product( productNamesElRinconDeRick.get(i), productDescriptionsBares.get(i), pricesElRinconDeRick.get(i), typesBares.get(i), 4, imagesBares.get(i), stocksBares.get(i)));
             }
             for (int i = 0; i < productNamesEliteII.size(); i++) {
-                db.productDAO().insertProduct(new Product(productNamesEliteII.get(i), productDescriptionsBares.get(i), pricesEliteII.get(i), typesBares.get(i), 4, imagesBares.get(i), stocksBares.get(i)));
+                db.productDAO().insertProduct(new Product(productNamesEliteII.get(i), productDescriptionsBares.get(i), pricesEliteII.get(i), typesBares.get(i), 5, imagesBares.get(i), stocksBares.get(i)));
             }
             for (int i = 0; i < productNamesLaTahona.size(); i++) {
-                db.productDAO().insertProduct(new Product( productNamesLaTahona.get(i), productDescriptionsBares.get(i), pricesLaTahona.get(i), typesBares.get(i), 5, imagesBares.get(i), stocksBares.get(i)));
+                db.productDAO().insertProduct(new Product( productNamesLaTahona.get(i), productDescriptionsBares.get(i), pricesLaTahona.get(i), typesBares.get(i), 6, imagesBares.get(i), stocksBares.get(i)));
             }
             for (int i = 0; i < productNamesGranjaAntonio.size(); i++) {
-                db.productDAO().insertProduct(new Product( productNamesGranjaAntonio.get(i), productDescriptionsGranjaAntonio.get(i), pricesGranjaAntonio.get(i), typesGranjaAntonio.get(i), 6, imagesGranjaAntonio.get(i), stocksGranjaAntonio.get(i)));
+                db.productDAO().insertProduct(new Product( productNamesGranjaAntonio.get(i), productDescriptionsGranjaAntonio.get(i), pricesGranjaAntonio.get(i), typesGranjaAntonio.get(i), 7, imagesGranjaAntonio.get(i), stocksGranjaAntonio.get(i)));
             }
             for (int i = 0; i < productNamesLasCosturasDeAmelia.size(); i++) {
-                db.productDAO().insertProduct(new Product( productNamesLasCosturasDeAmelia.get(i), productDescriptionsLasCosturasDeAmelia.get(i), pricesLasCosturasDeAmelia.get(i), typesLasCosturasDeAmelia.get(i), 7, imagesLasCosturasDeAmelia.get(i), stocksLasCosturasDeAmelia.get(i)));
+                db.productDAO().insertProduct(new Product( productNamesLasCosturasDeAmelia.get(i), productDescriptionsLasCosturasDeAmelia.get(i), pricesLasCosturasDeAmelia.get(i), typesLasCosturasDeAmelia.get(i), 8, imagesLasCosturasDeAmelia.get(i), stocksLasCosturasDeAmelia.get(i)));
             }
             // Insert users
             List<String> userNames = Arrays.asList("user1", "user2", "user3", "user4", "user5", "user6", "user7", "user8", "user9", "user10");
