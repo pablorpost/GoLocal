@@ -8,12 +8,14 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import es.hack4good.golocal.database.AppDatabase;
 import es.hack4good.golocal.database.entity.Product;
 
 public class ProductAdapter extends BaseAdapter {
     Context context;
-    ArrayList<Product> products;
+    List<Product> products = AppDatabase.getInstance(context).productDAO().getAllProducts();
 
     @Override
     public int getCount() {
