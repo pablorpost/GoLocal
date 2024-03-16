@@ -48,6 +48,6 @@ public class ProductAdapter extends BaseAdapter {
 
         textView = convertView.findViewById(R.id.nombreProducto);
         textView.setText(p.getName());
-        return null;
+        return convertView;
     }
 }
