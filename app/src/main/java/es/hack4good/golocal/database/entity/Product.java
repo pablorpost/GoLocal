@@ -25,8 +25,8 @@ public class Product {
     @ColumnInfo(name = "stock")
     private int stock;
 
-    public Product(long id, String name, String description, double price, ProductType type, long storeId, String image, int stock) {
-        this.id = id;
+    public Product( String name, String description, double price, ProductType type, long storeId, String image, int stock) {
+
         this.name = name;
         this.description = description;
         this.price = price;

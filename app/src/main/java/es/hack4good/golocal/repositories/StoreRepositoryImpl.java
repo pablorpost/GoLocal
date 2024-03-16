@@ -26,7 +26,7 @@ public class StoreRepositoryImpl implements StoreRepository{
 
     @Override
     public void insertStore(Store store){
-        storeDAO.insertStore(store);
+        storeDAO.insert(store);
     }
 
     @Override

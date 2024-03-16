@@ -24,8 +24,7 @@ public class Store {
     private String email;
     @ColumnInfo(name = "web")
     private String web;
-    public Store(long id, String name, String location, String image, String description, String phone, String email, String web) {
-        this.id = id;
+    public Store( String name, String location, String image, String description, String phone, String email, String web) {
         this.name = name;
         this.location = location;
         this.image = image;

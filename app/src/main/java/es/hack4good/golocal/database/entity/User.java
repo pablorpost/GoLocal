@@ -20,8 +20,7 @@ public class User {
     private String address;
     @ColumnInfo(name = "image")
     private String image;
-    public User(int id, String name, String email, int hashedPassword, String phone, String address, String image) {
-        this.id = id;
+    public User(String name, String email, int hashedPassword, String phone, String address, String image) {
         this.name = name;
         this.email = email;
         this.hashedPassword = hashedPassword;

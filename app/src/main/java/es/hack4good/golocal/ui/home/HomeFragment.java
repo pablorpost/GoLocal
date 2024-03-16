@@ -20,6 +20,7 @@ import es.hack4good.golocal.ProductAdapter;
 import es.hack4good.golocal.R;
 import es.hack4good.golocal.database.AppDatabase;
 import es.hack4good.golocal.database.entity.Product;
+import es.hack4good.golocal.database.services.DbInitializer;
 import es.hack4good.golocal.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
@@ -35,7 +36,11 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         ListView listView = view.findViewById(R.id.listView);
-        List<Product> products = AppDatabase.getInstance(null).productDAO().getAllProducts();
+        AppDatabase db = AppDatabase.buildDatabaseInstance(this.getContext(),"golocal",false);
+        if(db.productDAO().getAllProducts().isEmpty()){
+            DbInitializer.initialize(db);
+        }
+        List<Product> products = db.productDAO().getAllProducts();
         System.out.println("prueba");
         System.out.println(products);
         ProductAdapter adapter = new ProductAdapter(getActivity(),products);

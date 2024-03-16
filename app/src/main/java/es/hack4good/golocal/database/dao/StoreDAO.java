@@ -20,9 +20,10 @@ public interface StoreDAO {
     @Query("SELECT * FROM store WHERE name = :name")
     public Store getStoreByName(String name);
     @Insert
-    public void insertStore(Store store);
+    public void insert(Store store);
     @Update
     public void updateStore(Store store);
     @Delete
     public void deleteStore(Store store);
+
 }
