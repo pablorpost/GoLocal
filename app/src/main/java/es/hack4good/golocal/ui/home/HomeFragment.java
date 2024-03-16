@@ -4,12 +4,22 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import java.util.List;
+
+import es.hack4good.golocal.ProductAdapter;
+import es.hack4good.golocal.R;
+import es.hack4good.golocal.database.AppDatabase;
+import es.hack4good.golocal.database.entity.Product;
 import es.hack4good.golocal.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
@@ -22,11 +32,16 @@ public class HomeFragment extends Fragment {
                 new ViewModelProvider(this).get(HomeViewModel.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
+        ListView listView = view.findViewById(R.id.listView);
+        List<Product> products = AppDatabase.getInstance(null).productDAO().getAllProducts();
+        System.out.println("prueba");
+        System.out.println(products);
+        ProductAdapter adapter = new ProductAdapter(getActivity(),products);
+        listView.setAdapter(adapter);
+
+        return view;
     }
 
     @Override

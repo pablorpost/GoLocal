@@ -15,8 +15,12 @@ import es.hack4good.golocal.database.entity.Product;
 
 public class ProductAdapter extends BaseAdapter {
     Context context;
-    List<Product> products = AppDatabase.getInstance(context).productDAO().getAllProducts();
+    List<Product> products;
 
+    public ProductAdapter(Context context, List<Product> lst) {
+        this.context = context;
+        this.products = lst;
+    }
     @Override
     public int getCount() {
         return products.size();
