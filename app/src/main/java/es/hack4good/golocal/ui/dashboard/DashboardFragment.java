@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -33,7 +34,7 @@ public class DashboardFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
         ListView listView = view.findViewById(R.id.listView2);
         AppDatabase db = AppDatabase.buildDatabaseInstance(getActivity(),"golocal",false);
@@ -41,9 +42,33 @@ public class DashboardFragment extends Fragment {
             DbInitializer.initialize(db);
         }
 
-        List<Pair<Product,Integer>> basket = new Basket(null, getContext()).getProducts();
+        Basket b = new Basket(null, getContext());
+
+        List<Pair<Product,Integer>> basket = b.getProducts();
         BasketAdapter adapter = new BasketAdapter(getActivity(),basket);
         listView.setAdapter(adapter);
+
+        Button payButton = view.findViewById(R.id.payButton);
+        Button emptyButton = view.findViewById(R.id.emptyButton);
+
+        TextView totalText = view.findViewById(R.id.totalText);
+
+        totalText.setText("Total: " + String.valueOf(b.totalCost()));
+
+        payButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                basket.clear();
+                //Payment process will be taken here
+            }
+        });
+
+        emptyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                basket.clear();
+            }
+        });
 
 
 

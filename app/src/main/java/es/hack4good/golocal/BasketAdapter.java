@@ -52,7 +52,7 @@ public class BasketAdapter extends BaseAdapter {
 
 
         textView.setText(p.getName());
-        quantityView.setText(String.valueOf(quantity));
+        quantityView.setText("Cantidad: "+String.valueOf(quantity));
         priceView.setText(String.valueOf(p.getPrice())+"€");
         return convertView;
     }
