@@ -2,9 +2,15 @@ package es.hack4good.golocal;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
+
+import android.view.LayoutInflater;
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -12,11 +18,13 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import es.hack4good.golocal.database.entity.Product;
+import es.hack4good.golocal.models.Basket;
 
 public class ShowProduct extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_show_product);
@@ -39,5 +47,15 @@ public class ShowProduct extends AppCompatActivity {
             price.setText(String.valueOf(p.getPrice()));
 
         }
+        Basket basket = new Basket(null, this);
+        Button buyButton = findViewById(R.id.buyProduct);
+        buyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Product p = (Product) intent.getSerializableExtra("product");
+                basket.addProduct(p,1);
+                finish();
+            }
+        });
     }
 }
